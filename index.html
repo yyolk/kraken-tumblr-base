@@ -46,12 +46,26 @@
             Did you know that your web browser is a bit old? Some of the content on this site might not work right as a result. <a href="http://whatbrowser.org">Upgrade your browser</a> for a faster, better, and safer web experience.
         </section>
     <![endif]-->
+    <header>
+      <h1>{Title}</h1>
+      {block:Description}<p>{Description}</p>{/block:Description}
+    </header>
 
     <section class="container">
-
-      <h1>Hello World!</h1>
-
-      <p>Add your content here.</p>
+    {block:Posts}
+      <div class="row">
+        <div class="grid-6">
+        {block:Text}
+        <div class="row">
+          {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+        </div>
+        <div class="row">
+          {Body}
+        </div>
+        {/block:Text}
+        </div>
+      </div>
+    {/block:Posts}
 
     </section>
 
